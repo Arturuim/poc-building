@@ -10,7 +10,7 @@ namespace Domain.Interfaces.Repositories
         List<Building> GetBuildings(Filter filter);
         Building GetBuildingByAddress(string address);
         Building GetBuildingByName(string name);
-        Building GetBuildingById(string id);
+        Building GetBuildingById(string buildingId);
         void AddBuidling(Building building);
         void UnpdateBuilding(string id, Building building);
         void DeleteBuilding(string id);

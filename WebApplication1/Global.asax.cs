@@ -2,17 +2,18 @@
 using Autofac.Integration.WebApi;
 using Data.MsSqlDataAcceess.Repositories;
 using Infrastructure.Data.Infrastructure;
-using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Reflection;
-using System.Web;
-using System.Web.Compilation;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Domain.Interfaces.Repositories;
+using Services.Interfaces;
+using Services;
+using AutoMapper;
+
+using WebApplication1.Mappings.Profiles;
 
 namespace WebApplication1
 {
@@ -46,13 +47,24 @@ namespace WebApplication1
                 .As<IConnectionStringProvider>();
 
             builder.Register(c => new BuildingsRepository(c.Resolve<IConnectionStringProvider>()))
-                .AsImplementedInterfaces();
+                .As<IBuildingsRepository>();
+
+            builder.Register(c => new BuildingsService(c.Resolve<IBuildingsRepository>()))
+                .As<IBuildingsService>();
 
             //builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
             //    .AsImplementedInterfaces();
 
             // Set the dependency resolver to be Autofac.
             var container = builder.Build();
+
+            Mapper.Initialize(conf =>
+            {
+                var assembly = Assembly.GetExecutingAssembly();
+                conf.AddProfiles(assembly);
+                assembly = Assembly.GetAssembly(typeof(BuildingsService));
+                conf.AddProfiles(assembly);
+            });
 
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }

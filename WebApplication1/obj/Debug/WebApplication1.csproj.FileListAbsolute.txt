@@ -205,3 +205,11 @@ C:\Users\artur.shalamai\source\repos\WebApplication1\WebApplication1\bin\Domain.
 C:\Users\artur.shalamai\source\repos\WebApplication1\WebApplication1\bin\Infrastructure.Data.dll
 C:\Users\artur.shalamai\source\repos\WebApplication1\WebApplication1\bin\Domain.Interfaces.pdb
 C:\Users\artur.shalamai\source\repos\WebApplication1\WebApplication1\bin\Infrastructure.Data.pdb
+C:\Users\artur.shalamai\source\repos\WebApplication1\WebApplication1\bin\Services.Interfaces.dll
+C:\Users\artur.shalamai\source\repos\WebApplication1\WebApplication1\bin\Services.Interfaces.pdb
+C:\Users\artur.shalamai\source\repos\WebApplication1\WebApplication1\bin\Services.dll
+C:\Users\artur.shalamai\source\repos\WebApplication1\WebApplication1\bin\AutoMapper.dll
+C:\Users\artur.shalamai\source\repos\WebApplication1\WebApplication1\bin\Services.pdb
+C:\Users\artur.shalamai\source\repos\WebApplication1\WebApplication1\bin\AutoMapper.pdb
+C:\Users\artur.shalamai\source\repos\WebApplication1\WebApplication1\bin\AutoMapper.xml
+C:\Users\artur.shalamai\source\repos\WebApplication1\WebApplication1\bin\System.ValueTuple.xml

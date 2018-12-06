@@ -22,7 +22,23 @@ namespace Data.MsSqlDataAcceess.Repositories
 
         public void AddBuidling(Building building)
         {
-            throw new NotImplementedException();
+            using (var conn = new SqlConnection(ConnectionStringProvider.GetConnectionString()))
+            {
+                var res = conn.Execute(BuildingQueries.InsertBuildingQuery(), new
+                {
+                    building.Id,
+                    building.OwnerId,
+                    building.Address,
+                    building.Condition,
+                    building.Price,
+                    OpendOn = building.OpenedOn,
+                    ClosedOn = building.ClosedBy
+                });
+                if (res == 0)
+                {
+                    throw new Exception("An error has occured."); 
+                }
+            }
         }
 
         public void DeleteBuilding(string id)
@@ -32,12 +48,18 @@ namespace Data.MsSqlDataAcceess.Repositories
 
         public Building GetBuildingByAddress(string address)
         {
-            throw new NotImplementedException();
+            using (var conn = new SqlConnection(ConnectionStringProvider.GetConnectionString()))
+            {
+                return conn.QueryFirstOrDefault<Building>(BuildingQueries.GetBuildingByAddress(), new { address });
+            }
         }
 
-        public Building GetBuildingById(string id)
+        public Building GetBuildingById(string buildingId)
         {
-            throw new NotImplementedException();
+            using (var conn = new SqlConnection(ConnectionStringProvider.GetConnectionString()))
+            {
+                return conn.QueryFirstOrDefault<Building>(BuildingQueries.GetBuildingByIdQuery(), new { buildingId });
+            }
         }
 
         public Building GetBuildingByName(string name)

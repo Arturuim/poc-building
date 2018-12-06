@@ -11,7 +11,8 @@
         public string Address { get; set; }
         public Conditions Condition { get; set; }
         public decimal Price { get; set; }
-        public TimeSpan AvaliableHours { get; set; }
+        public DateTime OpenedOn { get; set; }
+        public DateTime ClosedBy { get; set; }
 
         public List<Comment> Comments { get; set; }
 
@@ -20,6 +21,11 @@
 
     public enum Conditions
     {
+        UnApproved,
+        NotSatisfactual,
+        Medium,
+        Satisfactual,
+        Excelent
     }
 
     public enum StayTime { }

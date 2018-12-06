@@ -12,7 +12,7 @@ using Domain.Interfaces.Repositories;
 using Services.Interfaces;
 using Services;
 using AutoMapper;
-
+using Infrastructure.Data.Repositories;
 using WebApplication1.Mappings.Profiles;
 
 namespace WebApplication1
@@ -51,6 +51,14 @@ namespace WebApplication1
 
             builder.Register(c => new BuildingsService(c.Resolve<IBuildingsRepository>()))
                 .As<IBuildingsService>();
+
+
+            builder.Register(c => new CommentsRepository(c.Resolve<IConnectionStringProvider>()))
+                .As<ICommentsRepository>();
+
+            builder.Register(c => new CommentService(c.Resolve<ICommentsRepository>()))
+                .As<ICommentsService>();
+
 
             //builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
             //    .AsImplementedInterfaces();

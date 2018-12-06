@@ -7,6 +7,8 @@ namespace Domain.Interfaces.Repositories
 {
     public interface ICommentsRepository
     {
+        List<Comment> GetCommentsById(string id);
+
         List<Comment> GetCommentsById(string id, DateTime upToDate);
 
         void AddComment(Comment comment);

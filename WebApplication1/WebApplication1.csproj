@@ -164,6 +164,7 @@
   <ItemGroup>
     <Compile Include="API\DTO\BuildingCreateDTO.cs" />
     <Compile Include="API\DTO\BuildingWithOwnerCreateDTO.cs" />
+    <Compile Include="API\DTO\CommentCreateDTO.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -203,6 +204,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mappings\Profiles\BuildingsProfile.cs" />
+    <Compile Include="Mappings\Profiles\CommentsProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

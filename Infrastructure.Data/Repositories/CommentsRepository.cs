@@ -24,6 +24,7 @@ namespace Infrastructure.Data.Repositories
                 var res = conn.Execute(CommentQueries.AddCommentQuery(), new
                 {
                     comment.AuthorId,
+                    comment.CommentId,
                     comment.ResourceId,
                     comment.Date,
                     comment.Text,
@@ -35,9 +36,22 @@ namespace Infrastructure.Data.Repositories
             }
         }
 
+        public List<Comment> GetCommentsById(string id)
+        {
+            using (var conn = new SqlConnection(ConnectionStringProvider.GetConnectionString()))
+            {
+                return conn.Query<Comment>(CommentQueries.GetCommentsById(), new { CommentId = id })
+                    .ToList();
+            }
+        }
+
         public List<Comment> GetCommentsById(string id, DateTime upToDate)
         {
-            throw new NotImplementedException();
+            using (var conn = new SqlConnection(ConnectionStringProvider.GetConnectionString()))
+            {
+                return conn.Query<Comment>(CommentQueries.GetCommentsByTimeId(), new { id, Date = upToDate })
+                    .ToList();
+            }
         }
 
         public void UpdateComment(Comment comment)

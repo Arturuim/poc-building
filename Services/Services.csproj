@@ -49,7 +49,9 @@
   <ItemGroup>
     <Compile Include="BuildingsService.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="CommentService.cs" />
     <Compile Include="Mapping\Profiles\BuildingProfile.cs" />
+    <Compile Include="Mapping\Profiles\CommentsProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

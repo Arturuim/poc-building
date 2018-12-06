@@ -10,7 +10,18 @@ namespace Infrastructure.Data.Repositories
     {
         public static string AddCommentQuery()
         {
-            return $"";
+            return $@"INSERT INTO [dbo].[Comments](CommentId, ResourceId, AuthorId, Text, Date, IsApproved, ApproverId) 
+                      VALUES(@CommentId, @ResourceId, @AuthorId, @Text, @Date, @IsApproved, @ApproverId)";
+        }
+
+        public static string GetCommentsById()
+        {
+            return $"SELECT * FROM [dbo].[Comments] WHERE CommentId=@CommentId ";
+        }
+
+        public static string GetCommentsByTimeId()
+        {
+            return $"SELECT * FROM [dbo].[Comments] WHERE Id=@Id AND Date >= Convert(datetime, @date)";
         }
     }
 }

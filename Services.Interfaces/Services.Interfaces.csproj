@@ -44,7 +44,10 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DTO\BuildingCreateDto.cs" />
     <Compile Include="DTO\BuildingInfoDTO.cs" />
+    <Compile Include="DTO\CommentSimplyDTO.cs" />
+    <Compile Include="DTO\CreateCommentDTO.cs" />
     <Compile Include="IBuildingsService.cs" />
+    <Compile Include="ICommentsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

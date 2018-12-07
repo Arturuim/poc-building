@@ -48,6 +48,8 @@
     <Compile Include="Infrastructure\FilterExtension.cs" />
     <Compile Include="Infrastructure\IConnectionStringProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ApproverQueries.cs" />
+    <Compile Include="Repositories\ApproverRepository.cs" />
     <Compile Include="Repositories\BuildingQueries.cs" />
     <Compile Include="Repositories\BuildingsRepository.cs" />
     <Compile Include="Repositories\CommentQueries.cs" />

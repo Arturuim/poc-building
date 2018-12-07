@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApproverService.cs" />
     <Compile Include="BuildingsService.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="CommentService.cs" />

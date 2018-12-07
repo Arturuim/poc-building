@@ -46,6 +46,7 @@
     <Compile Include="DTO\BuildingInfoDTO.cs" />
     <Compile Include="DTO\CommentSimplyDTO.cs" />
     <Compile Include="DTO\CreateCommentDTO.cs" />
+    <Compile Include="IApproverService.cs" />
     <Compile Include="IBuildingsService.cs" />
     <Compile Include="ICommentsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -176,23 +176,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\artur.shalamai\\.nuget\\packages\\": {},
+    "C:\\Users\\Asus\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\artur.shalamai\\source\\repos\\WebApplication1\\Domain.Model\\Domain.Model.csproj",
+      "projectUniqueName": "D:\\Projects\\Work POC\\WebApplication1\\Domain.Model\\Domain.Model.csproj",
       "projectName": "Domain.Model",
-      "projectPath": "C:\\Users\\artur.shalamai\\source\\repos\\WebApplication1\\Domain.Model\\Domain.Model.csproj",
-      "packagesPath": "C:\\Users\\artur.shalamai\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\artur.shalamai\\source\\repos\\WebApplication1\\Domain.Model\\obj\\",
+      "projectPath": "D:\\Projects\\Work POC\\WebApplication1\\Domain.Model\\Domain.Model.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\Work POC\\WebApplication1\\Domain.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\artur.shalamai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -200,9 +200,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://artifactory.dev.intapp.com/artifactory/api/nuget/nuget-time": {},
-        "https://artifactory.dev.intapp.com/artifactory/api/nuget/nuget-timecloud": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {

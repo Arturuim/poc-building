@@ -4,14 +4,19 @@
     using System.Collections.Generic;
     using System.Text;
 
-    public class Comment
+    public class Refuse
     {
-        public string CommentId { get; set; }
-        public string ResourceId { get; set; }
+        public string RefuseId { get; set; }
+        public string BuildingId { get; set; }
         public string AuthorId { get; set; }
+
         public string Text { get; set; }
-        public DateTime Date { get; set; }
-        public bool IsApproved { get; set; }
+        public DateTime CreationDate { get; set; }
+
+        public RefuseStatus Status { get; set; }
         public string ApproverId  { get; set; }
     }
+
+
+    public enum RefuseStatus { Unspecified, Approved, Rejected }
 }

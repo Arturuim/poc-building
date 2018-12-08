@@ -6,20 +6,24 @@
 
     public class Building
     {
-        public string Id { get; set; }
         public string OwnerId { get; set; }
+        public string BuildingId { get; set; }
         public string Address { get; set; }
         public Conditions Condition { get; set; }
         public decimal Price { get; set; }
-        public TimeSpan AvaliableHours { get; set; }
+        public DateTime OpenTime { get; set; }
+        public DateTime CloseTime { get; set; }
+        public bool Is24Hours { get; set; }
 
         public List<Comment> Comments { get; set; }
-
         public List<MetaData> MetaData { get; set; }
     }
 
     public enum Conditions
     {
+        Under_Approve,
+        Satisfied,
+        Fine
     }
 
     public enum StayTime { }

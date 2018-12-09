@@ -72,9 +72,23 @@ namespace Data.MsSqlDataAcceess.Repositories
             }
         }
 
-        public void UnpdateBuilding(string id, Building building)
+        public void UpdateBuilding(Building building)
         {
-            throw new NotImplementedException();
+            using (var conn = new SqlConnection(this._connStrProvider.GetConnectionString()))
+            {
+                var res = conn.Execute(BuildingQueries.UpdateBuilding(), new
+                {
+                    building.BuildingId,
+                    building.Address,
+                    building.Condition,
+                    building.Price,
+                    building.OpenTime,
+                    building.CloseTime,
+                    building.Is24Hours
+                });
+
+                if (res == 0) { throw new InvalidOperationException("Error has occured!"); }
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Domain.Interfaces.Repositories
         Building GetBuildingByName(string name);
         Building GetBuildingById(string id);
         void AddBuidling(Building building);
-        void UnpdateBuilding(string id, Building building);
+        void UpdateBuilding(Building building);
         void DeleteBuilding(string id);
     }
 }

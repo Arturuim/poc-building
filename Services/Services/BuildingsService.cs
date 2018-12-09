@@ -20,5 +20,13 @@ namespace Services
         {
             this._buildingsRepo.AddBuidling(Mapper.Map<Building>(newBuilding));
         }
+
+        public void UpdateBuildingInfo(BuildingCreateDto buidlingInfo, string buildingId)
+        {
+            var building = Mapper.Map<Building>(buidlingInfo);
+            building.BuildingId = buildingId;
+            building.Condition = Conditions.Under_Approve;
+            this._buildingsRepo.UpdateBuilding(building);
+        }
     }
 }

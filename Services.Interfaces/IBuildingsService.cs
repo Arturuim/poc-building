@@ -10,5 +10,7 @@ namespace Services.Interfaces
     public interface IBuildingsService
     {
         void AddNewBuilding(BuildingCreateDto newBuilding);
+
+        void UpdateBuildingInfo(BuildingCreateDto buidlingInfo, string buildingId);
     }
 }

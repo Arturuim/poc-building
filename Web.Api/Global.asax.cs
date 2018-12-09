@@ -26,6 +26,9 @@ namespace Web.Api
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+            json.UseDataContractJsonSerializer = true;
+
             var serviceAssembly = typeof(BuildingsService).Assembly;
 
             Mapper.Initialize(cfg =>

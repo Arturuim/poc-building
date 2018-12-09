@@ -43,10 +43,15 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DTO\BuildingCreateDto.cs" />
+    <Compile Include="DTO\BuildingInfoDTO.cs" />
     <Compile Include="IBuildingsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Domain.Interfaces\Domain.Interfaces.csproj">
+      <Project>{13CC2E90-814F-44C6-9A8F-F17A023853D0}</Project>
+      <Name>Domain.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.Model\Domain.Model.csproj">
       <Project>{6958A7FE-E847-466A-B257-66251E66F20C}</Project>
       <Name>Domain.Model</Name>

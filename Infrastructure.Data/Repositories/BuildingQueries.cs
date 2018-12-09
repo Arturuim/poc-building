@@ -9,12 +9,15 @@ namespace Infrastructure.Data.Repositories
     public static class BuildingQueries
     {
         public static string GetBuildingsByFilterQuery(Filter filter) =>
-            $"SELECT * FROM [dbo].[Buildings] ORDER BY Id {filter.ToSql()}";
+            $"SELECT * FROM [dbo].[BuildingsData] ORDER BY BuildingId {filter.ToSql()}";
 
         public static string GetBuildingByIdQuery()
         {
-            return $@"SELECT * FROM [dbo].[Buildings] WHERE Id=@buildingId";
+            return $@"SELECT * FROM [dbo].[BuildingsData] WHERE BuildingId=@buildingId";
         }
+
+        public static string GetBuildingByAddressQuery() =>
+            $@"SELECT * FROM [dbo].[BuildingsData] WHERE Address LIKE @Address ;";
 
         public static string AddBuildingQuery()
         {

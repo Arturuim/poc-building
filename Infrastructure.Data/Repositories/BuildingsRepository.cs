@@ -39,7 +39,7 @@ namespace Data.MsSqlDataAcceess.Repositories
                     building.Is24Hours
                 });
 
-                if(res == 0) { throw new InvalidOperationException("Error has occured!"); }
+                if (res == 0) { throw new InvalidOperationException("Error has occured!"); }
             }
         }
 
@@ -48,14 +48,24 @@ namespace Data.MsSqlDataAcceess.Repositories
             throw new NotImplementedException();
         }
 
-        public Building GetBuildingByAddress(string address)
+        public List<Building> GetBuildingsByAddress(string address)
         {
-            throw new NotImplementedException();
+            using (var conn = new SqlConnection(ConnectionStringProvider.GetConnectionString()))
+            {
+                var res = conn.Query<Building>(BuildingQueries.GetBuildingByAddressQuery(), new { Address = $"%{address}%" })
+                    .ToList();
+
+                return res ?? throw new NullReferenceException($"Building with address : {address} not found.");
+            }
         }
 
-        public Building GetBuildingById(string id)
+        public Building GetBuildingById(string buildingId)
         {
-            throw new NotImplementedException();
+            using (var conn = new SqlConnection(ConnectionStringProvider.GetConnectionString()))
+            {
+                var res = conn.QueryFirstOrDefault<Building>(BuildingQueries.GetBuildingByIdQuery(), new { buildingId });
+                return res ?? throw new NullReferenceException($"Building with id : {buildingId} not found.");
+            }
         }
 
         public Building GetBuildingByName(string name)

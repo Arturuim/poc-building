@@ -8,9 +8,9 @@ namespace Domain.Interfaces.Repositories
     public interface IBuildingsRepository
     {
         List<Building> GetBuildings(Filter filter);
-        Building GetBuildingByAddress(string address);
+        List<Building> GetBuildingsByAddress(string address);
         Building GetBuildingByName(string name);
-        Building GetBuildingById(string id);
+        Building GetBuildingById(string buildingId);
         void AddBuidling(Building building);
         void UpdateBuilding(Building building);
         void DeleteBuilding(string id);

@@ -19,7 +19,7 @@ namespace Services.Mappings.Profiles
                 .ForMember(dest => dest.MetaData, opts => opts.Ignore())
                 .ForMember(dest => dest.Comments, opts => opts.Ignore());
 
-            //CreateMap<Building>
+            CreateMap<Building, BuildingInfoDTO>();
         }
     }
 }

@@ -13,6 +13,8 @@ namespace Web.Api.Mappings.Profiles
         {
             CreateMap<BuildingCreateDTO, Services.Interfaces.DTO.BuildingCreateDto>()
                 .ForMember(dest => dest.OwnerId, opts => opts.Ignore());
+
+            CreateMap<Services.Interfaces.DTO.BuildingInfoDTO, BuildingInfoDTO>();
         }
     }
 }

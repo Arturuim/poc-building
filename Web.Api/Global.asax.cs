@@ -1,7 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Autofac;
+using Autofac.Integration.WebApi;
+using AutoMapper;
+using Data.MsSqlDataAcceess.Repositories;
+using Domain.Interfaces.Repositories;
+using Infrastructure.Data.Infrastructure;
+using Services;
+using Services.Interfaces;
+using Services.Mappings.Profiles;
+using System.Configuration;
+using System.Reflection;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -18,6 +25,30 @@ namespace Web.Api
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var serviceAssembly = typeof(BuildingsService).Assembly;
+
+            Mapper.Initialize(cfg =>
+            {
+                cfg.AddProfiles(Assembly.GetExecutingAssembly());
+                cfg.AddProfiles(serviceAssembly);
+            });
+
+            var builder = new ContainerBuilder();
+            var config = GlobalConfiguration.Configuration;
+
+            builder.Register(c => new MsSqlConnectionStringProvider(ConfigurationManager.ConnectionStrings["Buildings"].ConnectionString))
+                .As<IConnectionStringProvider>();
+
+            builder.Register(c => new BuildingsRepository(c.Resolve<IConnectionStringProvider>()))
+                .As<IBuildingsRepository>();
+
+            builder.Register(c => new BuildingsService(c.Resolve<IBuildingsRepository>()))
+                .As<IBuildingsService>();
+
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            var container = builder.Build();
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }
     }
 }

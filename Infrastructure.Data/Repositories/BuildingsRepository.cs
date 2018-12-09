@@ -16,13 +16,31 @@ namespace Data.MsSqlDataAcceess.Repositories
 {
     public class BuildingsRepository : RepositoryBase, IBuildingsRepository
     {
+        private readonly IConnectionStringProvider _connStrProvider;
+
         public BuildingsRepository(IConnectionStringProvider connectionStringProvider) : base(connectionStringProvider)
         {
+            this._connStrProvider = connectionStringProvider;
         }
 
         public void AddBuidling(Building building)
         {
-            throw new NotImplementedException();
+            using (var conn = new SqlConnection(this._connStrProvider.GetConnectionString()))
+            {
+                var res = conn.Execute(BuildingQueries.AddBuildingQuery(), new
+                {
+                    building.OwnerId,
+                    building.BuildingId,
+                    building.Address,
+                    building.Condition,
+                    building.Price,
+                    building.OpenTime,
+                    building.CloseTime,
+                    building.Is24Hours
+                });
+
+                if(res == 0) { throw new InvalidOperationException("Error has occured!"); }
+            }
         }
 
         public void DeleteBuilding(string id)

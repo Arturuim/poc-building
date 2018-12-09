@@ -15,5 +15,11 @@ namespace Infrastructure.Data.Repositories
         {
             return $@"SELECT * FROM [dbo].[Buildings] WHERE Id=@buildingId";
         }
+
+        public static string AddBuildingQuery()
+        {
+            return $@"INSERT INTO [dbo].[BuildingsData] (OwnerId, BuildingId, Address, Condition, Price, OpenTime, CloseTime, Is24Hours) 
+                        VALUES (@OwnerId, @BuildingId, @Address, @Condition, @Price, @OpenTime, @CloseTime, @Is24Hours);";
+        }
     }
 }

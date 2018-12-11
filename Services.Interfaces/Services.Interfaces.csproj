@@ -47,6 +47,7 @@
     <Compile Include="DTO\Deals\CreateDealDTO.cs" />
     <Compile Include="IBuildingsService.cs" />
     <Compile Include="IDealService.cs" />
+    <Compile Include="IInvestigationsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -46,11 +46,12 @@
     <Compile Include="Repositories\IBuildingsRepository.cs" />
     <Compile Include="Repositories\ICommentsRepository.cs" />
     <Compile Include="Repositories\IDealsRepository.cs" />
+    <Compile Include="Repositories\IInvestigationsRepository.cs" />
     <Compile Include="Repositories\IPersonsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain.Model\Domain.Model.csproj">
-      <Project>{6958A7FE-E847-466A-B257-66251E66F20C}</Project>
+      <Project>{6958a7fe-e847-466a-b257-66251e66f20c}</Project>
       <Name>Domain.Model</Name>
     </ProjectReference>
   </ItemGroup>

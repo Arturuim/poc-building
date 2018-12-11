@@ -7,7 +7,7 @@ namespace Domain.Model
     public class Investigation
     {
         public string InvestigationId { get; set; }
-        public string RefuseId { get; set; }
+        public string DealId { get; set; }
 
         public List<string> Investigators { get; set; }
         public InvestigationStatuses Status { get; set; }

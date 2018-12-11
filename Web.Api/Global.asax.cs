@@ -57,6 +57,12 @@ namespace Web.Api
             builder.Register(c => new DealService(c.Resolve<IDealsRepository>(), c.Resolve<IBuildingsService>()))
                 .As<IDealService>();
 
+            builder.Register(c => new InvestigationsRepository(c.Resolve<IConnectionStringProvider>()))
+                .As<IInvestigationsRepository>();
+
+            builder.Register(c => new InvestigationService(c.Resolve<IInvestigationsRepository>()))
+                .As<IInvestigationsService>();
+
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             var container = builder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);

@@ -9,7 +9,6 @@ using RouteAttribute = System.Web.Http.RouteAttribute;
 
 namespace Web.Api.Controllers
 {
-    [System.Web.Http.Authorize(Roles = "Client")]
     public class BuildingsController : ApiController
     {
         private readonly IBuildingsService _buildingsService;
@@ -46,6 +45,7 @@ namespace Web.Api.Controllers
             return Ok(res);
         }
 
+        [Authorize(Roles ="Owner")]
         public IHttpActionResult Post(BuildingCreateDTO newBuild)
         {
             var serviceModel = Mapper.Map<Services.Interfaces.DTO.BuildingCreateDto>(newBuild);
@@ -55,6 +55,7 @@ namespace Web.Api.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "Owner")]
         [Route("api/buildings/{buildingId}")]
         public IHttpActionResult Put(string buildingId, [FromBody]BuildingCreateDTO buildingInfo)
         {

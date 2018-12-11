@@ -48,8 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mappings\Profiles\BuildingsProfile.cs" />
+    <Compile Include="Mappings\Profiles\DealProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BuildingsService.cs" />
+    <Compile Include="Services\DealService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain.Interfaces\Domain.Interfaces.csproj">

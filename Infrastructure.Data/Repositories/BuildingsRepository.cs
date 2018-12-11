@@ -16,16 +16,13 @@ namespace Data.MsSqlDataAcceess.Repositories
 {
     public class BuildingsRepository : RepositoryBase, IBuildingsRepository
     {
-        private readonly IConnectionStringProvider _connStrProvider;
-
         public BuildingsRepository(IConnectionStringProvider connectionStringProvider) : base(connectionStringProvider)
         {
-            this._connStrProvider = connectionStringProvider;
         }
 
         public void AddBuidling(Building building)
         {
-            using (var conn = new SqlConnection(this._connStrProvider.GetConnectionString()))
+            using (var conn = new SqlConnection(this.ConnectionStringProvider.GetConnectionString()))
             {
                 var res = conn.Execute(BuildingQueries.AddBuildingQuery(), new
                 {
@@ -84,7 +81,7 @@ namespace Data.MsSqlDataAcceess.Repositories
 
         public void UpdateBuilding(Building building)
         {
-            using (var conn = new SqlConnection(this._connStrProvider.GetConnectionString()))
+            using (var conn = new SqlConnection(this.ConnectionStringProvider.GetConnectionString()))
             {
                 var res = conn.Execute(BuildingQueries.UpdateBuilding(), new
                 {

@@ -4,9 +4,11 @@ using AutoMapper;
 using Data.MsSqlDataAcceess.Repositories;
 using Domain.Interfaces.Repositories;
 using Infrastructure.Data.Infrastructure;
+using Infrastructure.Data.Repositories;
 using Services;
 using Services.Interfaces;
 using Services.Mappings.Profiles;
+using Services.Services;
 using System.Configuration;
 using System.Reflection;
 using System.Web.Http;
@@ -26,8 +28,8 @@ namespace Web.Api
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
-            json.UseDataContractJsonSerializer = true;
+            //var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+            //json.UseDataContractJsonSerializer = true;
 
             var serviceAssembly = typeof(BuildingsService).Assembly;
 
@@ -48,6 +50,12 @@ namespace Web.Api
 
             builder.Register(c => new BuildingsService(c.Resolve<IBuildingsRepository>()))
                 .As<IBuildingsService>();
+
+            builder.Register(c => new DealsRepository(c.Resolve<IConnectionStringProvider>()))
+                .As<IDealsRepository>();
+
+            builder.Register(c => new DealService(c.Resolve<IDealsRepository>(), c.Resolve<IBuildingsService>()))
+                .As<IDealService>();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             var container = builder.Build();

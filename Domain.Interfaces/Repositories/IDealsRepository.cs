@@ -13,10 +13,12 @@ namespace Domain.Interfaces.Repositories
 
         void CreateDeal(Deal deal);
 
-        void ConfirmDeal(string dealId, string approvedId);
+        void ConfirmDeal(string dealId, string confirmerId);
 
-        void UpdateDeal(Deal deal);
+        void DeclineDeal(string dealId, string declinerId);
 
-        void DeleteDeals(string id);
+        //void SuspectDeal(string dealId, string suspectorId);
+
+        //void DeleteDeals(string id);
     }
 }

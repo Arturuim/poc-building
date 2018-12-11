@@ -50,6 +50,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BuildingQueries.cs" />
     <Compile Include="Repositories\BuildingsRepository.cs" />
+    <Compile Include="Repositories\DealQueries.cs" />
+    <Compile Include="Repositories\DealsRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>

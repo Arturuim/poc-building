@@ -39,5 +39,13 @@ namespace Web.Api.Controllers
             this._investigationsService.StartInvestigation(dealId, investigatorsIds);
             return Ok();
         }
+
+        [HttpPut]
+        [Route("api/investigations/{investigationId}/status")]
+        public IHttpActionResult StartInvestigation(string investigationId, [FromBody]string status)
+        {
+            this._investigationsService.ChangeStatus(investigationId, status);
+            return Ok();
+        }
     }
 }

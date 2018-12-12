@@ -27,6 +27,16 @@ namespace Infrastructure.Data.Repositories
             }
         }
 
+        public void ChangeStatus(string investigationId, InvestigationStatuses status)
+        {
+            using (var conn = new SqlConnection(this.ConnectionStringProvider.GetConnectionString()))
+            {
+                var res = conn.Execute(InvestigationsQueries.ChangeStatusQuery(status), new { investigationId });
+
+                if (res == 0) { throw new InvalidOperationException("Error has occured!"); }
+            }
+        }
+
         public void CreateInvestigation(Investigation investigation)
         {
             using (var conn = new SqlConnection(this.ConnectionStringProvider.GetConnectionString()))
@@ -58,7 +68,7 @@ namespace Infrastructure.Data.Repositories
 
                         var test = results.FirstOrDefault(i => i.InvestigationId == invest.InvestigationId);
 
-                        if(test == null)
+                        if (test == null)
                         {
                             results.Add(invest);
                         }

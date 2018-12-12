@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,5 +35,9 @@ namespace Infrastructure.Data.Repositories
                FROM [poc-Buildings].[dbo].[InvestigationParticipants]
                WHERE [InvestigationId] = @InvestigationId  AND 
                      [InvestigatorId] = @InvestigatorId;";
+
+        public static string ChangeStatusQuery(InvestigationStatuses status) =>
+            $@"UPDATE [dbo].[InvestigationsData] SET [Status] = {(int)status} 
+                WHERE InvestigationId = @InvestigationId;";
     }
 }

@@ -52,6 +52,12 @@ namespace Services.Services
             investigatorsIds.ForEach(id => this._investigationsRepository.AddInvestigator(investigation.InvestigationId, id));
         }
 
+        public void ChangeStatus(string investigationId, string status)
+        {
+            Enum.TryParse(status, out InvestigationStatuses parseStatus);
+            this._investigationsRepository.ChangeStatus(investigationId, parseStatus);
+        }
+
         //private bool IsParticipant(string investigationId, string investigatorId)
         //{
         //    var investigation = this._investigationsRepository.GetById(investigation)

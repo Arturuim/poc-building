@@ -1,4 +1,5 @@
-﻿using Services.Interfaces.DTO.Investigations;
+﻿using Domain.Model;
+using Services.Interfaces.DTO.Investigations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,7 @@ namespace Services.Interfaces
         void AddNoteToInvestigation(string investigationId,string investigatorId, string note);
 
         bool CheckIfPartOfInvestigation(string investigationId, string investigatorId);
+
+        void ChangeStatus(string investigationId, string status);
     }
 }

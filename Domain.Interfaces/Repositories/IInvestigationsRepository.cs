@@ -16,5 +16,7 @@ namespace Domain.Interfaces.Repositories
         Investigation GetInvestigationById(string investigationId);
 
         bool IsParticipantOfInvestigation(string investigationId, string overseerId);
+
+        void ChangeStatus(string investigationId, InvestigationStatuses status);
     }
 }

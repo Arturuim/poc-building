@@ -18,6 +18,7 @@ namespace Web.Api.Controllers
             _investigationsService = investigationsService;
         }
 
+        [Authorize(Roles = "Overseer")]
         [HttpGet]
         [Route("api/investigations/{investigationId}")]
         public IHttpActionResult GetById(string investigationId)
@@ -25,6 +26,7 @@ namespace Web.Api.Controllers
             return Ok(this._investigationsService.GetInvestigationInfoById(investigationId));
         }
 
+        [Authorize(Roles = "Overseer")]
         [HttpGet]
         [Route("api/investigations/{investigationId}/check")]
         public IHttpActionResult CheckIfParticipant(string investigationId)
@@ -32,6 +34,7 @@ namespace Web.Api.Controllers
             return Ok(this._investigationsService.CheckIfPartOfInvestigation(investigationId, User.Identity.GetUserId()));
         }
 
+        [Authorize(Roles = "SeniorOverseer")]
         [HttpPost]
         [Route("api/investigations/{dealId}")]
         public IHttpActionResult StartInvestigation(string dealId, [FromBody]List<string> investigatorsIds)
@@ -40,6 +43,7 @@ namespace Web.Api.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "Overseer")]
         [HttpPut]
         [Route("api/investigations/{investigationId}/status")]
         public IHttpActionResult StartInvestigation(string investigationId, [FromBody]string status)

@@ -45,6 +45,7 @@
     <Compile Include="DTO\BuildingCreateDto.cs" />
     <Compile Include="DTO\BuildingInfoDTO.cs" />
     <Compile Include="DTO\Deals\CreateDealDTO.cs" />
+    <Compile Include="DTO\Investigations\InvestigationInfoDTO.cs" />
     <Compile Include="IBuildingsService.cs" />
     <Compile Include="IDealService.cs" />
     <Compile Include="IInvestigationsService.cs" />

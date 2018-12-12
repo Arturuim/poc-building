@@ -1,4 +1,5 @@
-﻿using Services.Interfaces;
+﻿using Microsoft.AspNet.Identity;
+using Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,20 @@ namespace Web.Api.Controllers
         public InvestigationsController(IInvestigationsService investigationsService)
         {
             _investigationsService = investigationsService;
+        }
+
+        [HttpGet]
+        [Route("api/investigations/{investigationId}")]
+        public IHttpActionResult GetById(string investigationId)
+        {
+            return Ok(this._investigationsService.GetInvestigationInfoById(investigationId));
+        }
+
+        [HttpGet]
+        [Route("api/investigations/{investigationId}/check")]
+        public IHttpActionResult CheckIfParticipant(string investigationId)
+        {
+            return Ok(this._investigationsService.CheckIfPartOfInvestigation(investigationId, User.Identity.GetUserId()));
         }
 
         [HttpPost]

@@ -12,5 +12,9 @@ namespace Domain.Interfaces.Repositories
         void CreateInvestigation(Investigation investigation);
 
         void AddInvestigator(string investigationId, string investigatorId);
+
+        Investigation GetInvestigationById(string investigationId);
+
+        bool IsParticipantOfInvestigation(string investigationId, string overseerId);
     }
 }

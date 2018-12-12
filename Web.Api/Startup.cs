@@ -42,6 +42,10 @@ namespace Web.Api
                 roleManager.Create<IdentityRole, string>(new IdentityRole("Overseer"));
             }
 
+            if (!roleManager.RoleExists<IdentityRole, string>("SeniorOverseer"))
+            {
+                roleManager.Create<IdentityRole, string>(new IdentityRole("SeniorOverseer"));
+            }
         }
     }
 }

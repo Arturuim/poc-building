@@ -47,6 +47,7 @@
     <Compile Include="Repositories\ICommentsRepository.cs" />
     <Compile Include="Repositories\IDealsRepository.cs" />
     <Compile Include="Repositories\IInvestigationsRepository.cs" />
+    <Compile Include="Repositories\IInvestigationNotesRepository.cs" />
     <Compile Include="Repositories\IPersonsRepository.cs" />
   </ItemGroup>
   <ItemGroup>

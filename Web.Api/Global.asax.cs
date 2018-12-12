@@ -60,7 +60,10 @@ namespace Web.Api
             builder.Register(c => new InvestigationsRepository(c.Resolve<IConnectionStringProvider>()))
                 .As<IInvestigationsRepository>();
 
-            builder.Register(c => new InvestigationService(c.Resolve<IInvestigationsRepository>()))
+            builder.Register(c => new InvestigationNotesRepository(c.Resolve<IConnectionStringProvider>()))
+                .As<IInvestigationNotesRepository>();
+
+            builder.Register(c => new InvestigationService(c.Resolve<IInvestigationsRepository>(), c.Resolve<IInvestigationNotesRepository>()))
                 .As<IInvestigationsService>();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());

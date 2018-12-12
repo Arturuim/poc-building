@@ -54,6 +54,8 @@
     <Compile Include="Repositories\DealsRepository.cs" />
     <Compile Include="Repositories\InvestigationsQueries.cs" />
     <Compile Include="Repositories\InvestigationsRepository.cs" />
+    <Compile Include="Repositories\InvestigationNotesQueries.cs" />
+    <Compile Include="Repositories\InvestigationNotesRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>

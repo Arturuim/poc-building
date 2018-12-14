@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Domain.Model
+﻿namespace Domain.Model
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class Investigation
     {
         public string InvestigationId { get; set; }

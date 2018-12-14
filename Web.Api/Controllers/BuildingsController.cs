@@ -35,15 +35,7 @@ namespace Web.Api.Controllers
             return Ok(res);
         }
 
-        //[HttpGet]
-        //public IHttpActionResult GetByAddress(string address)
-        //{
-        //    var res = this._buildingsService.GetBuildingsByAddress(address)
-        //        .Select(b => Mapper.Map<BuildingInfoDTO>(b))
-        //        .ToList();
-
-        //    return Ok(res);
-        //}
+      
 
         [Authorize(Roles ="Owner")]
         public IHttpActionResult Post(BuildingCreateDTO newBuild)
@@ -68,3 +60,14 @@ namespace Web.Api.Controllers
         }
     }
 }
+
+
+//[HttpGet]
+//public IHttpActionResult GetByAddress(string address)
+//{
+//    var res = this._buildingsService.GetBuildingsByAddress(address)
+//        .Select(b => Mapper.Map<BuildingInfoDTO>(b))
+//        .ToList();
+
+//    return Ok(res);
+//}

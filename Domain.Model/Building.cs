@@ -15,7 +15,7 @@
         public DateTime CloseTime { get; set; }
         public bool Is24Hours { get; set; }
 
-        public List<Refuse> Comments { get; set; }
+        public List<Refuse> Refuses { get; set; }
         public List<MetaData> MetaData { get; set; }
     }
 

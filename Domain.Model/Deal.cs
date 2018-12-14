@@ -19,5 +19,5 @@
         public string ApproverId { get; set; }
     }
 
-    public  enum DealStatus { InProgres, Confirmed, Declined, Approved, Blocked }
+    public enum DealStatus { InProgres, Confirmed, Declined, Approved, Blocked }
 }

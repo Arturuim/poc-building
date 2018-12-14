@@ -57,10 +57,11 @@ namespace Services.Services
             Enum.TryParse(status, out InvestigationStatuses parseStatus);
             this._investigationsRepository.ChangeStatus(investigationId, parseStatus);
         }
-
-        //private bool IsParticipant(string investigationId, string investigatorId)
-        //{
-        //    var investigation = this._investigationsRepository.GetById(investigation)
-        //}
     }
 }
+
+
+//private bool IsParticipant(string investigationId, string investigatorId)
+//{
+//    var investigation = this._investigationsRepository.GetById(investigation)
+//}

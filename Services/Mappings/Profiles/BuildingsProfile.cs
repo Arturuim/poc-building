@@ -17,7 +17,7 @@ namespace Services.Mappings.Profiles
                 .ForMember(dest => dest.BuildingId, opts => opts.MapFrom(x => Guid.NewGuid()))
                 .ForMember(dest => dest.Condition, opts => opts.MapFrom(x => Conditions.Under_Approve))
                 .ForMember(dest => dest.MetaData, opts => opts.Ignore())
-                .ForMember(dest => dest.Comments, opts => opts.Ignore());
+                .ForMember(dest => dest.Refuses, opts => opts.Ignore());
 
             CreateMap<Building, BuildingInfoDTO>();
         }

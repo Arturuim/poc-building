@@ -4,7 +4,10 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # User-specific files
+<<<<<<< HEAD
 *.rsuser
+=======
+>>>>>>> e5a5a35875de23c84500b5634db3c2e689072376
 *.suo
 *.user
 *.userosscache
@@ -20,8 +23,11 @@
 [Rr]eleases/
 x64/
 x86/
+<<<<<<< HEAD
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
+=======
+>>>>>>> e5a5a35875de23c84500b5634db3c2e689072376
 bld/
 [Bb]in/
 [Oo]bj/
@@ -55,6 +61,10 @@ BenchmarkDotNet.Artifacts/
 project.lock.json
 project.fragment.lock.json
 artifacts/
+<<<<<<< HEAD
+=======
+**/Properties/launchSettings.json
+>>>>>>> e5a5a35875de23c84500b5634db3c2e689072376
 
 # StyleCop
 StyleCopReport.xml
@@ -62,7 +72,11 @@ StyleCopReport.xml
 # Files built by Visual Studio
 *_i.c
 *_p.c
+<<<<<<< HEAD
 *_h.h
+=======
+*_i.h
+>>>>>>> e5a5a35875de23c84500b5634db3c2e689072376
 *.ilk
 *.meta
 *.obj
@@ -79,7 +93,10 @@ StyleCopReport.xml
 *.tlh
 *.tmp
 *.tmp_proj
+<<<<<<< HEAD
 *_wpftmp.csproj
+=======
+>>>>>>> e5a5a35875de23c84500b5634db3c2e689072376
 *.log
 *.vspscc
 *.vssscc
@@ -224,15 +241,22 @@ ClientBin/
 *.publishsettings
 orleans.codegen.cs
 
+<<<<<<< HEAD
 # Including strong name files can present a security risk
+=======
+# Including strong name files can present a security risk 
+>>>>>>> e5a5a35875de23c84500b5634db3c2e689072376
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
 #*.snk
 
 # Since there are multiple workflows, uncomment next line to ignore bower_components
 # (https://github.com/github/gitignore/pull/1529#issuecomment-104372622)
 #bower_components/
+<<<<<<< HEAD
 # ASP.NET Core default setup: bower directory is configured as wwwroot/lib/ and bower restore is true
 **/wwwroot/lib/
+=======
+>>>>>>> e5a5a35875de23c84500b5634db3c2e689072376
 
 # RIA/Silverlight projects
 Generated_Code/
@@ -296,8 +320,13 @@ paket-files/
 .idea/
 *.sln.iml
 
+<<<<<<< HEAD
 # CodeRush personal settings
 .cr/personal
+=======
+# CodeRush
+.cr/
+>>>>>>> e5a5a35875de23c84500b5634db3c2e689072376
 
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
@@ -322,7 +351,11 @@ __pycache__/
 # OpenCover UI analysis results
 OpenCover/
 
+<<<<<<< HEAD
 # Azure Stream Analytics local run output
+=======
+# Azure Stream Analytics local run output 
+>>>>>>> e5a5a35875de23c84500b5634db3c2e689072376
 ASALocalRun/
 
 # MSBuild Binary and Structured Log
@@ -331,8 +364,13 @@ ASALocalRun/
 # NVidia Nsight GPU debugger configuration file
 *.nvuser
 
+<<<<<<< HEAD
 # MFractors (Xamarin productivity tool) working folder
 .mfractor/
 
 # Local History for Visual Studio
 .localhistory/
+=======
+# MFractors (Xamarin productivity tool) working folder 
+.mfractor/
+>>>>>>> e5a5a35875de23c84500b5634db3c2e689072376
